@@ -20,7 +20,7 @@ BACKFILL_DAYS="200"
 #Enter your MySQL information below
 MYSQL_DBNAME="newznab"
 MYSQL_USER="root"
-MYSQL_PASS=""
+MYSQL_PASS=''
 MYSQL_HOST="localhost"
 
 #Enter number of times to allow update_releases to loop while processing backfill before doing an update_binaries.
