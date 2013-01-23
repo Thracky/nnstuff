@@ -52,4 +52,4 @@
 ## Usage
 
 * First edit the paths for PHP and Newznab, set your nzb path, number of nzb's to import per run, and all the other variables.
-* Simply run the script in your screen/tmux session and let it run.
+* Simply run the script in your screen/tmux session and let it do its thing.
