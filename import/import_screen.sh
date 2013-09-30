@@ -33,9 +33,6 @@ BINARIES_KEEPUP="5"
 #Frequency of optimise_db, update_theaters, and update_tvschedule in seconds.
 OPTIMISE_UPDATE="43200"
 
-#Frequency of update_parsing, removespecial, update_cleanup in seconds.
-PARSING_FREQUENCY="7200"
-
 # Start script
 
 LASTOPTIMIZE=`date +%s`
@@ -89,16 +86,6 @@ then
 ${PHP_PATH}  ${NEWZNAB_DIR}/misc/update_scripts/optimise_db.php
 ${PHP_PATH}  ${NEWZNAB_DIR}/misc/update_scripts/update_tvschedule.php
 ${PHP_PATH}  ${NEWZNAB_DIR}/misc/update_scripts/update_theaters.php
-fi
-
-PARSEDIFF=$(($CURRTIME-$LASTPARSE))
-if [ "$PARSEDIFF" -gt "$PARSING_FREQUENCY" ] || [ "$PARSEDIFF" -lt 1 ]
-then
-	LASTPARSE=`date +%s`
-${PHP_PATH}  ${NEWZNAB_DIR}/misc/testing/update_parsing.php
-${PHP_PATH}  ${NEWZNAB_DIR}/misc/testing/removespecial.php
-${PHP_PATH}  ${NEWZNAB_DIR}/misc/testing/update_cleanup.php
-
 fi
 
 done

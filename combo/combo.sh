@@ -82,10 +82,6 @@ done
 
 echo "Finished backfilling another day, running optimizations and cleanup."
 sleep 5
-${PHP_PATH} ${NEWZNAB_DIR}/misc/testing/update_parsing.php
-${PHP_PATH} ${NEWZNAB_DIR}/misc/testing/removespecial.php
-${PHP_PATH} ${NEWZNAB_DIR}/misc/testing/update_cleanup.php
-${PHP_PATH} ${NEWZNAB_DIR}/misc/update_scripts/optimise_db.php
 
 echo "Optimization done, on to backfilling another day."
 mysql -u $MYSQL_USER -h $MYSQL_HOST -p$MYSQL_PASS $MYSQL_DBNAME -e "UPDATE groups set backfill_target=backfill_target+1 where active=1 and backfill_target<$BACKFILL_DAYS;"
