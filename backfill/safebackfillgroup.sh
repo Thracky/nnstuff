@@ -82,9 +82,6 @@ done
 
 echo "Finished backfilling another day, running optimizations and cleanup."
 sleep 5
-${PHP_PATH} ${NEWZNAB_DIR}/misc/testing/update_parsing.php
-${PHP_PATH} ${NEWZNAB_DIR}/misc/testing/removespecial.php
-${PHP_PATH} ${NEWZNAB_DIR}/misc/testing/update_cleanup.php
 echo "Running optimize_db, this can take a bit..."
 #${PHP_PATH} ${NEWZNAB_DIR}/misc/update_scripts/optimise_db.php
 
